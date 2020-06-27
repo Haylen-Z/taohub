@@ -13,6 +13,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:text="注销"
+        android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
