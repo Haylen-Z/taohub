@@ -5,5 +5,6 @@
     <string name="title_car">购物车</string>
     <string name="title_mine">我的</string>
     <string name="preference_file_key">pfk</string>
-    <string name="preference_user_key">current_user</string>
+    <string name="preference_user_id_key">current_user_id</string>
+    <string name="preference_username_key">current_username_id</string>
 </resources>

@@ -10,7 +10,8 @@ public class TaoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        this.db = Room.databaseBuilder(getApplicationContext(), TaoDatabase.class, "database").build();
+        this.db = Room.databaseBuilder(getApplicationContext(), TaoDatabase.class, "database")
+            .createFromAsset("JingBaoMall.db").build();
     }
 
     public TaoDatabase getDatabase() {

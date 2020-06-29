@@ -14,6 +14,7 @@ import com.github.mrgrtt.taohub.R;
 import com.github.mrgrtt.taohub.TaoApplication;
 import com.github.mrgrtt.taohub.dao.UserDao;
 import com.github.mrgrtt.taohub.model.User;
+import com.github.mrgrtt.taohub.util.AuthUtil;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.List;
@@ -80,8 +81,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginSuccess(User user) {
-        SharedPreferences sp = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-        sp.edit().putLong(getString(R.string.preference_user_key), user.getId()).apply();
+        AuthUtil.saveLoginState(user, this);
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
         finish();

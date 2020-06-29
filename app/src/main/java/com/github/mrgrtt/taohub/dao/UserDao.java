@@ -8,8 +8,6 @@ import com.github.mrgrtt.taohub.model.User;
 
 import java.util.List;
 
-import io.reactivex.Observable;
-import io.reactivex.Single;
 
 @Dao
 public interface UserDao {

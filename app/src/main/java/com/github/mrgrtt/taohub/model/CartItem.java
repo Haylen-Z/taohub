@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "car_item")
-public class CarItem {
+public class CartItem {
     @PrimaryKey(autoGenerate = true)
     private Long id;
 
@@ -16,7 +16,7 @@ public class CarItem {
     private Long userId;
 
     @ColumnInfo(name = "count")
-    private int count;
+    private Integer count;
 
     @ColumnInfo(name = "sum_price")
     private Long sumPrice;
@@ -25,7 +25,7 @@ public class CarItem {
         this.id = id;
     }
 
-    public void setCount(int count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 
@@ -45,7 +45,7 @@ public class CarItem {
         return id;
     }
 
-    public int getCount() {
+    public Integer getCount() {
         return count;
     }
 

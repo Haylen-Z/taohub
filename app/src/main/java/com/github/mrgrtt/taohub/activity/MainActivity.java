@@ -31,6 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean hasLogin() {
         SharedPreferences sp = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-        return sp.contains(getString(R.string.preference_user_key));
+        return sp.contains(getString(R.string.preference_user_id_key));
     }
 }
