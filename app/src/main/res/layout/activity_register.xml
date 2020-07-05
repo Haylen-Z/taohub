@@ -7,9 +7,17 @@
     android:orientation="vertical"
     tools:context=".activity.LoginActivity">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        app:title="注册"
+        style="@style/toolbar"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username"
         android:hint="用户名"
+        app:boxBackgroundColor="@color/design_default_color_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -23,6 +31,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
         android:hint="密码"
+        app:boxBackgroundColor="@color/design_default_color_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

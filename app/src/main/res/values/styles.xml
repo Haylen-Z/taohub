@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -6,6 +6,24 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="recyclerView" parent="AppTheme">
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:scrollbarSize">2dp</item>
+        <item name="android:scrollbarThumbVertical">@color/colorPrimary</item>
+    </style>
+
+    <style name="bottom" parent="AppTheme">
+        <item name="itemTextColor">@color/design_default_color_background</item>
+        <item name="itemIconTint">@color/tab_icon_color</item>
+        <item name="itemTextAppearanceActive">@color/colorPrimary</item>
+    </style>
+
+    <style name="toolbar" parent="AppTheme">
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="titleTextColor">@color/design_default_color_background</item>
+        <item name="android:elevation">4dp</item>
     </style>
 
 </resources>

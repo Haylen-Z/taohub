@@ -42,8 +42,7 @@ public class CarFragment extends Fragment implements CartItemAdapter.OnDelete {
     private CartItemDao cartItemDao;
     private ProductDao productDao;
     private CartItemAdapter adapter;
-    private TextView sumPrice;
-    private long sum = 0;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,14 +53,11 @@ public class CarFragment extends Fragment implements CartItemAdapter.OnDelete {
         cartItemDao = db.cartItemDao();
         productDao = db.productDao();
 
-        sumPrice = view.findViewById(R.id.sum_price);
-
         RecyclerView recyclerView = view.findViewById(R.id.list);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new CartItemAdapter(new ArrayList<CartListItem>(), getContext(), this);
         recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
         return view;
     }
 
@@ -97,19 +93,12 @@ public class CarFragment extends Fragment implements CartItemAdapter.OnDelete {
     }
 
     private void showCartItem(List<CartListItem> cs) {
-        sum = 0;
-        for (CartListItem item: cs) {
-            sum += item.getPrice();
-        }
-        sumPrice.setText(PriceUtil.convert(sum));
         adapter.setData(cs);
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void delete(final CartListItem item) {
-        sum -= item.getPrice();
-        sumPrice.setText(PriceUtil.convert(sum));
         Completable.create(new CompletableOnSubscribe() {
             @Override
             public void subscribe(CompletableEmitter emitter) throws Exception {

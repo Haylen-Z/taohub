@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.github.mrgrtt.taohub.R;
 import com.github.mrgrtt.taohub.activity.DetailActivity;
 import com.github.mrgrtt.taohub.model.CartListItem;
+import com.github.mrgrtt.taohub.util.PriceUtil;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -44,10 +46,10 @@ public class CartItemAdapter extends RecyclerView.Adapter<CartItemAdapter.CartIt
         final CartListItem item = data.get(position);
         Glide.with(context).load(item.getProduct().getThumbnail())
                 .centerCrop().into(holder.image);
+        holder.name.setText(item.getProduct().getName());
         holder.count.setText(String.valueOf(item.getCount()));
-        String priceS = BigDecimal.valueOf(data.get(position).getPrice())
-                .divide(BigDecimal.valueOf(100)).setScale(2, BigDecimal.ROUND_HALF_UP).toString();
-        holder.price.setText(priceS);
+        holder.price.setText("￥" + PriceUtil.convert(item.getProduct().getPrice()));
+        holder.sumPrice.setText("￥" + PriceUtil.convert(item.getPrice()));
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,16 +76,20 @@ public class CartItemAdapter extends RecyclerView.Adapter<CartItemAdapter.CartIt
     public static class CartItemViewHolder extends RecyclerView.ViewHolder {
         public View view;
         public ImageView image;
+        public TextView name;
         public TextView count;
         public TextView price;
-        public Button delete;
+        public TextView sumPrice;
+        public ImageButton delete;
 
         public CartItemViewHolder(@NonNull View view) {
             super(view);
             this.view = view;
+            name = view.findViewById(R.id.name);
             image = view.findViewById(R.id.image);
             count = view.findViewById(R.id.count);
             price = view.findViewById(R.id.price);
+            sumPrice = view.findViewById(R.id.sum_price);
             delete = view.findViewById(R.id.delete);
         }
     }

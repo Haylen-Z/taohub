@@ -1,10 +1,12 @@
 package com.github.mrgrtt.taohub.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,10 +23,10 @@ import com.github.mrgrtt.taohub.model.History;
 import com.github.mrgrtt.taohub.model.Product;
 import com.github.mrgrtt.taohub.util.AuthUtil;
 import com.github.mrgrtt.taohub.util.PriceUtil;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.math.BigDecimal;
 
 import io.reactivex.Completable;
 import io.reactivex.CompletableEmitter;
@@ -43,6 +45,11 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp);
 
         TaoDatabase db = ((TaoApplication) getApplication()).getDatabase();
         cartItemDao = db.cartItemDao();
@@ -127,5 +134,16 @@ public class DetailActivity extends AppCompatActivity {
             }
         }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
                 .subscribe();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

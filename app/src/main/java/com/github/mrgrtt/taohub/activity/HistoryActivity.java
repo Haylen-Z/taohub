@@ -1,11 +1,13 @@
 package com.github.mrgrtt.taohub.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.github.mrgrtt.taohub.R;
 import com.github.mrgrtt.taohub.TaoApplication;
@@ -16,6 +18,7 @@ import com.github.mrgrtt.taohub.dao.ProductDao;
 import com.github.mrgrtt.taohub.model.History;
 import com.github.mrgrtt.taohub.model.HistoryListItem;
 import com.github.mrgrtt.taohub.util.AuthUtil;
+import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +39,11 @@ public class HistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp);
 
         TaoDatabase db = ((TaoApplication) getApplication()).getDatabase();
         historyDao = db.historyDao();
@@ -76,5 +84,16 @@ public class HistoryActivity extends AppCompatActivity {
     private void showData(List<HistoryListItem> hs) {
         adapter.setData(hs);
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -1,8 +1,10 @@
 package com.github.mrgrtt.taohub.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,6 +12,7 @@ import com.github.mrgrtt.taohub.R;
 import com.github.mrgrtt.taohub.TaoApplication;
 import com.github.mrgrtt.taohub.dao.UserDao;
 import com.github.mrgrtt.taohub.model.User;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputLayout;
 import java.util.List;
 import io.reactivex.Observable;
@@ -27,6 +30,11 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp);
 
         userDao = ((TaoApplication) getApplication()).getDatabase().userDao();
     }
@@ -90,5 +98,16 @@ public class RegisterActivity extends AppCompatActivity {
     private void registerSuccess() {
         Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
         finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+              finish();
+              return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 }

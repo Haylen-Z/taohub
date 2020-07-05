@@ -9,11 +9,16 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
+        android:elevation="4dp"
+        app:tabBackground="@color/colorPrimaryDark"
+        app:tabTextColor="@color/design_default_color_background"
+        app:tabIndicatorColor="@color/design_default_color_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
+        style="@style/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
