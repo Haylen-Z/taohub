@@ -7,9 +7,9 @@
     <application
         android:name=".TaoApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/cart_l"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/cart_l"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.HistoryActivity"></activity>
@@ -18,7 +18,8 @@
             android:name=".activity.HomeActivity"/>
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"
+            android:theme="@style/flash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

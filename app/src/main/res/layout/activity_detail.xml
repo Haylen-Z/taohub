@@ -16,29 +16,66 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image"
-        android:layout_width="200dp"
-        android:layout_height="300dp" />
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="16dp">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/name"
+                android:textSize="20sp"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/price"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/detail"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_height="wrap_content" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
         android:text="加入购物车"
         android:onClick="buttonClick"
-        android:layout_width="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 
 </androidx.appcompat.widget.LinearLayoutCompat>

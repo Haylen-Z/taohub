@@ -26,4 +26,8 @@
         <item name="android:elevation">4dp</item>
     </style>
 
+    <style name="flash" parent="AppTheme">
+        <item name="android:windowBackground">@mipmap/cart</item>
+    </style>
+
 </resources>

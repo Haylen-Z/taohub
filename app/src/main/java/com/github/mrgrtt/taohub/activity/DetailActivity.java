@@ -69,9 +69,9 @@ public class DetailActivity extends AppCompatActivity {
         TextView price = findViewById(R.id.price);
         TextView detail = findViewById(R.id.detail);
 
-        Glide.with(this).load(product.getPicture()).centerCrop().into(image);
+        Glide.with(this).load(product.getPicture()).into(image);
         name.setText(product.getName());
-        price.setText(PriceUtil.convert(product.getPrice()));
+        price.setText("￥" + PriceUtil.convert(product.getPrice()));
         detail.setText(product.getDetail());
     }
 
