@@ -12,16 +12,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:text="注销"
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/history"
-        android:text="历史记录"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
+        <com.google.android.material.button.MaterialButton
+            android:text="注销"
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/history"
+            android:text="历史记录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/> 
+
+    </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
