@@ -43,9 +43,8 @@
             android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+            app:backgroundTint="@android:color/holo_red_light"
             android:layout_below="@+id/history"
-            android:textColor="#A9A9A9"
             android:layout_centerHorizontal="true"/>
 
     </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
