@@ -7,21 +7,46 @@
     android:orientation="vertical"
     tools:context=".fragment.MineFragment">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:text="注销"
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/history"
-        android:text="历史记录"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/person_Image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/personal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="170dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/person_Image"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000000"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/history"
+            android:text="历史浏览记录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:text="注销"
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_below="@+id/history"
+            android:textColor="#A9A9A9"
+            android:layout_centerHorizontal="true"/>
+
+    </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
