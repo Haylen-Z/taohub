@@ -26,6 +26,7 @@ import com.github.mrgrtt.taohub.util.PriceUtil;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 
 import io.reactivex.Completable;
@@ -91,7 +92,17 @@ public class DetailActivity extends AppCompatActivity {
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                addCartItem(Integer.valueOf(editText.getText().toString()));
+
+                if (editText.getText().toString().isEmpty()) {
+                   Toast.makeText(DetailActivity.this, "请输入购买数量", Toast.LENGTH_SHORT).show();
+                   return;
+                }
+                int num = Integer.valueOf(editText.getText().toString());
+                if (num < 1) {
+                    Toast.makeText(DetailActivity.this, "最少购买一个", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                addCartItem(num);
                 dialogInterface.dismiss();
             }
         });
