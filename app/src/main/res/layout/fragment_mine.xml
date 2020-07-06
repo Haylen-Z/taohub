@@ -8,44 +8,42 @@
     tools:context=".fragment.MineFragment">
 
 
-
-    <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/person_Image"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/personal"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="170dp"/>
+            android:background="@drawable/personal" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/person_Image"
-            android:layout_centerHorizontal="true"
-            android:textColor="#000000"/>
+            android:textColor="#000000"
+            android:layout_marginTop="5dp"/>
 
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/history"
-            android:text="历史浏览记录"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"/>
+            android:text="历史浏览记录"
+            android:layout_marginTop="10dp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:text="注销"
             android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:backgroundTint="@android:color/holo_red_light"
-            android:layout_below="@+id/history"
-            android:layout_centerHorizontal="true"/>
+            android:layout_marginTop="5dp"
+            android:text="注销"
+            app:backgroundTint="@android:color/holo_red_light" />
 
-    </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 </androidx.appcompat.widget.LinearLayoutCompat>
