@@ -13,19 +13,20 @@
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"/>
 
-    <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical"
+        android:gravity="center"
         >
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/username"
         android:hint="用户名"
         app:boxBackgroundColor="@color/design_default_color_background"
         android:layout_width="match_parent"
-        android:layout_marginTop="200dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -42,11 +43,11 @@
         android:id="@+id/password"
         android:hint="密码"
         app:boxBackgroundColor="@color/design_default_color_background"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp">
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -55,32 +56,26 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
 
     <com.google.android.material.button.MaterialButton
         android:text="登录"
         android:id="@+id/login"
         android:onClick="onLoginButtonClick"
-        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"/>
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/register"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:onClick="onRegisterButtonClick"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
         android:text="注册>"
         android:textColor="#A9A9A9"/>
 
