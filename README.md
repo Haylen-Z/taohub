@@ -1,3 +1,3 @@
 # taohub
 
-简易豆瓣andorid app
+课程实习作业（简易商城app）
